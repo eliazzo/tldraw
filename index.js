@@ -1,11 +1,13 @@
 const stickers = document.querySelectorAll(".sticker");
 const whiteboard = document.getElementById("whiteboard");
 
+
 /* -------------- */
 
 function dragStart(event) {
   console.log("dragging...");
   event.dataTransfer.setData("text", event.target.innerText); // dataTransfer holds event data // setData manages the dragged data (type_of_data, data)
+  event.target.classList.add('circle-select')
 }
 
 stickers.forEach((sticker) => {
@@ -33,3 +35,7 @@ function drop(event) {
 }
 
 whiteboard.addEventListener("drop", drop); // handles transferred data
+
+/* -------------- */
+
+

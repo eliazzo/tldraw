@@ -9,9 +9,14 @@
     justify-content: space-between;
 } */
 
-ul {
-    list-style-type: none;
+/* Primitives */
+
+.circle-select {
+    border: solid black 1px;
+    border-radius: 4px;
 }
+
+/* Element specific */
 
 #whiteboard {
     height: 300px;
@@ -19,3 +24,7 @@ ul {
     border: solid 1px red;
     position: relative;
   }
+
+  ul {
+    list-style-type: none;
+}
