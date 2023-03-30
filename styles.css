@@ -1,0 +1,21 @@
+/* Flex */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+/* 
+.space-even {
+    justify-content: space-between;
+} */
+
+ul {
+    list-style-type: none;
+}
+
+#whiteboard {
+    height: 300px;
+    width: 300px;
+    border: solid 1px red;
+    position: relative;
+  }
