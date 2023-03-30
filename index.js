@@ -35,13 +35,3 @@ function drop(event) {
 whiteboard.addEventListener("drop", drop); // handles transferred data
 
 /* -------------- */
-
-// stickers.forEach((sticker) => {
-//   sticker.addEventListener("click", moveSticker); // event fires on dragstart
-// });
-
-// function moveSticker(sticker, event) {
-//   const x = event.clientX;
-//   const y = event.clientY;
-//   sticker.style = `position: absolute; top: ${y}px; left: ${x}px;`
-// }
