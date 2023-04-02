@@ -1,37 +1,49 @@
 const stickers = document.querySelectorAll(".sticker");
-const whiteboard = document.getElementById("whiteboard")
+const whiteboard = document.getElementById("whiteboard");
 
-const lightbulb = document.getElementById("lightbulb")
+let previousClickHandler;
+let previousSticker;
 
-function cloneSticker() { // clones button text
-  const clone = lightbulb.cloneNode(true);
-  return clone.innerText;
-  // console.log(clone.innerText);
+function createEmojiSticker(event, emoji) {
+  const sticker = document.createElement('div')
+  sticker.style.position = "absolute"
+  sticker.style.left = `${event.clientX}px`
+  sticker.style.top = `${event.clientY}px`
+  sticker.innerText = emoji
+  sticker.style.transform = 'rotate(10deg)'
+  return sticker
 }
 
-// stickers.forEach((sticker) => {
-//   sticker.addEventListener("click", cloneSticker);
-// })
-
-lightbulb.addEventListener("click", cloneSticker)
-
-function dropSticker(event) {
-  const clonedSticker = cloneSticker()
-  const x = event.clientX;
-  const y = event.clientY;
-  const stickerDropPos = `<div style="position: absolute; top: ${y}px; left: ${x}px;">${clonedSticker}</div>`;
-  
-  event.target.insertAdjacentHTML("afterbegin", stickerDropPos)
+function stickerDrop(event, emoji) {
+  const newSticker = createEmojiSticker(event, emoji)
+  whiteboard.appendChild(newSticker);
 }
 
-whiteboard.addEventListener("click", dropSticker);
+function stickerMousemove(event, emoji) {
+
+  if (previousSticker) {
+    whiteboard.removeChild(previousSticker)
+  }
+
+  const newSticker = createEmojiSticker(event, emoji)
+  whiteboard.appendChild(newSticker);
+
+  previousSticker = newSticker;
+}
 
 
+stickers.forEach((sticker) => {
+  sticker.addEventListener("click", () => {
+    const emoji = sticker.cloneNode(true).innerText;
 
-const mousePosText = document.getElementById('mouse-pos');
-let mousePos = { x: undefined, y: undefined };
+    const onClickHandler = (event) => stickerDrop(event, emoji)
 
-window.addEventListener('mousemove', (event) => {
-   mousePos = { x: event.clientX, y: event.clientY };
-  mousePosText.textContent = `(${mousePos.x}, ${mousePos.y})`;
-})
+    whiteboard.removeEventListener("click", previousClickHandler);
+    whiteboard.addEventListener("click", onClickHandler);
+
+    const mousemoveHandler = (event) => stickerMousemove(event, emoji)
+    whiteboard.addEventListener("mousemove", mousemoveHandler);
+    
+    previousClickHandler = onClickHandler
+  });
+}); 
