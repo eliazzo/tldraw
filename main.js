@@ -1,19 +1,22 @@
 const stickers = document.querySelectorAll(".sticker");
 const whiteboard = document.getElementById("whiteboard")
 
-function cloneSticker(event) { // clones button text
-  const clone = event.target.cloneNode(true);
-  const emojiText = clone.innerText;
-  console.log(emojiText)
+const lightbulb = document.getElementById("lightbulb")
+
+function cloneSticker() { // clones button text
+  const clone = lightbulb.cloneNode(true);
+  return clone.innerText;
+  // console.log(clone.innerText);
 }
 
-stickers.forEach((sticker) => {
-  sticker.addEventListener("click", cloneSticker);
-})
+// stickers.forEach((sticker) => {
+//   sticker.addEventListener("click", cloneSticker);
+// })
+
+lightbulb.addEventListener("click", cloneSticker)
 
 function dropSticker(event) {
-
-  const clonedSticker = cloneSticker(event)
+  const clonedSticker = cloneSticker()
   const x = event.clientX;
   const y = event.clientY;
   const stickerDropPos = `<div style="position: absolute; top: ${y}px; left: ${x}px;">${clonedSticker}</div>`;
