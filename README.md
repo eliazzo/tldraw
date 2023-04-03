@@ -1,6 +1,6 @@
 # tldraw take-home
 
-This repo was created to showcase my response to the take-home challenge set by ![tldraw](https://github.com/tldraw)
+This repo was created to showcase my response to the take-home challenge set by [tldraw](https://github.com/tldraw)
 
 We were tasked to implement the basics of the feature shown below using regular HTML, CSS and JavaScript. As a **stretch goal**, we were asked to think beyond the basic specification written in the ticket. What else did the demo show? What else might the stickers feature need before it was ready for people to use? We were challenged to pick one of the ideas we came up with and implement it in the app.
 
