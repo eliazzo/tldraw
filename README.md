@@ -1,4 +1,4 @@
-# tldraw take-home
+# Tldraw take-home Challenge
 
 This repo was created to showcase my response to the take-home challenge set by [tldraw](https://github.com/tldraw)
 
@@ -15,9 +15,9 @@ We were tasked to implement the basics of the feature shown below using regular 
 
 ### Plan
 
-I used GitHub issues to break down the instructions into a series of small, manageable tasks that could be completed in separate branches. At this stage, I also considered what I might add to the sticker feature to improve the user experience. I set up a ![GitHub Project](https://github.com/users/eliazzo/projects/4/views/1) to record and track my workflow.
+I used GitHub issues to break down the instructions into a series of small, manageable tasks that could be completed in separate branches. At this stage, I also considered what I might add to the sticker feature to improve the user experience. I set up a [GitHub Project](https://github.com/users/eliazzo/projects/4/views/1) to record and track my workflow.
 
-[github project](Img/project_board.png)
+![github project](Img/project_board.png)
 
 ### Build
 
